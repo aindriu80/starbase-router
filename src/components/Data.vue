@@ -3,7 +3,7 @@
     <Item 
     v-for="(item, index) in items"
     :key="index"
-    :item="item"
+    :passeditem="item"
     :type="type"
     />
 </div>

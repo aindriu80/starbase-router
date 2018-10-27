@@ -16,7 +16,12 @@
 
 <script>
 export default {
-  props: ["item", "type"],
+  props: ["passeditem", "type"],
+  data() {
+    return {
+      item: {}
+    };
+  },
   methods: {
     switchItem() {
       let random_id = Math.floor(Math.random() * 63) + 1;
@@ -26,6 +31,9 @@ export default {
         .then(response => response.json())
         .then(json => (this.item = json));
     }
+  },
+  created() {
+    this.item = this.passeditem;
   }
 };
 </script>
